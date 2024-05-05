@@ -1,0 +1,25 @@
+version: '3.8'
+# docker run -p 8080:8080 -p 50000:50000 -v jenkins-data:/var/jenkins_home --name jenkins jenkins/jenkins:lts
+services:
+  jenkins:
+    build: .
+    ports:
+      - "8080:8080"
+      - "50000:50000"
+    volumes:
+      - jenkins-data:/var/jenkins_home
+      
+volumes:
+  jenkins-data:
+
+# version: '3.8'
+# services:
+#   jenkins:
+#     build: .
+#     ports:
+#       - "8080:8080"
+#       - "50000:50000"
+#     volumes:
+#       - jenkins-data:/var/jenkins_home
+# volumes:
+#   jenkins-data:
